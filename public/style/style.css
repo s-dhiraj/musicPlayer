@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    background-color: #ccc7c7;
+}
+.main_container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   
+}
+.music_player{
+   background-color: rgb(119 186 195);
+   /* height: 60vh; */
+   padding-bottom: 1.7rem;
+   width: 40vh;
+   border-radius: 2rem;
+   padding-top: 4rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+#song_name{
+    font-family: 'Girassol', cursive;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+}
+#song_writer{
+    font-family: 'Girassol', cursive;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: .4rem;
+    color: #07343a;
+}
+.img_container{
+    height: 18.8rem;
+    width: 18.8rem;
+    margin: 2rem auto ;
+   
+}
+img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    
+}
+.buttons{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fas{
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+.fa-play{
+    color:#fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.fa-pause{
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.option{
+    height: 4.2rem;
+    width: 4.2rem;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.option:hover{
+    background-color: #ccc9c9;
+    color: black;
+}
+.option:hover i{
+    /* background-color: #f2f2f2; */
+    color: black;
+}
+.anime{
+    box-shadow: 0rem 0.4rem 1rem 1rem #ccc9c9;
+    /* box-shadow: 0rem 0.4rem 1rem 1rem #297079; */
+    animation: rotatePlayer 3s linear infinite;
+}
+@keyframes rotatePlayer {
+   from{
+       transform: rotate(0deg);
+   }
+   to{
+       transform: rotate(360deg);
+   }
+}
+.progress_info{
+    width: 85%;
+    margin-top: -0.8rem;
+}
+.duration{
+    display: flex;
+    justify-content: space-between;
+}
+.cur_duration , .total_duration{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 0.3rem;
+}
+.progress_container{
+    position: relative;
+    height: 0.5rem;
+    width: 100%;
+    /* background-color: #297079; */
+    background-color: #ccc9c9;
+    border-radius: 4rem 4rem;
+    cursor: pointer;
+    box-shadow: 0rem 0rem 0px 0.1px #868585 ;
+}
+.progress_bar{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #000;
+    border-radius: 4rem 4rem;
+    cursor: pointer;
+}
+audio{
+    display: none;
+}
+
+
+
+/* html, body { height: 100%; } */
+body {
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+  overflow: hidden;
+}
+
+.ocean { 
+  height: 5%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  /* z-index: -1; */
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
